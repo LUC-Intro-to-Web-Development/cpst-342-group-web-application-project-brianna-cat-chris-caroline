@@ -24,15 +24,18 @@ After this course, your application will consist of the following components lis
 For this deliverable, you will need to modify the readme file and add responses to the questions below. that you are currently reading and address the following items below using a variety of permissible markdown syntax.
 
 - Provide your name or the team's name
--    Caroline, Cat, Chris, and Brianna
+   - Caroline, Cat, Chris, and Brianna
 - Name of the application
--    Chicago Eats
+   - Chicago Eats
 - Description of application *Describe how someone will use your application
 - Describe the need and purpose of the application
+   - This application gives Chicago-area foodies reviews of restaurants around the area. Additionally, this app allows for users to add notes to different restaurants. By storing the capability to both find reviews of local restaurants and maintain notes on these restaurants on a single app, this eliminates the need for users to have to search around for reviews in Chicago and the need to have a separate location to store notes about these restaurants. 
 - Intended target audience
+   - The target audience for this app would be for Chicago locals who are looking for Chicago restaurants that have other Chicago locals' stamp of approval. 
 - Identify the various pages your application will have and describe what users will be able to accomplish
 - Identify three goals of the application
-- Identify tools/software you will use to complete the project. 
+- Identify tools/software you will use to complete the project.
+   -We will be using Github Codespaces as a collaborative work environment. In terms of languages, we will be using JavaScript, Express.js, and SQLite. To access these Chicago reviews, we will be using a Rest-based Web API. Finally, we will be hosting the app using Heroku. 
 * I suggest using an online coding environment that will allow your team to work collaboratively and practice git commands.  A few are listed below.
    - [CodeSandbox.io](https://codesandbox.io/)
    - [Replit.com](https://replit.com/)
