@@ -34,7 +34,13 @@ For this deliverable, you will need to modify the readme file and add responses 
 - Intended target audience
    - The target audience for this app would be for Chicago locals who are looking for Chicago restaurants that have other Chicago locals' stamp of approval. 
 - Identify the various pages your application will have and describe what users will be able to accomplish
+   - Page 1: Home Page - The app opens on the Home page. The home page features a new review of a restaurant/a different restaurant each day. That is the only thing on the home page.
+   - Page 2: The Map - The map features the restaurants contained in the app. It also offers a customizable feature.
+   - Page 3: Search - The search page serves a dual purpose. It allows the user to either browse by cuisine or search specific terms in a search bar.
 - Identify three goals of the application
+   - Goal 1: Feature and promote local Chicago restaurants all in one place, and only Chicago restaurants.
+   - Goal 2: Provide reviews of each restaurant.
+   - Goal 3: Allow for a customizable map: users can plot their own restaurant points on a map, add private notes about the restaurant, and be able to save the map.
 - Identify tools/software you will use to complete the project.
    - We will be using Github Codespaces as a collaborative work environment. In terms of languages, we will be using JavaScript, Express.js, and SQLite. To access these Chicago reviews, we will be using a Rest-based Web API. Finally, we will be hosting the app using Heroku. 
 * I suggest using an online coding environment that will allow your team to work collaboratively and practice git commands.  A few are listed below.
