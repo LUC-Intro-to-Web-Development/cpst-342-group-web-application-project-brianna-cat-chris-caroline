@@ -28,6 +28,7 @@ For this deliverable, you will need to modify the readme file and add responses 
 - Name of the application
    - Chicago Eats
 - Description of application *Describe how someone will use your application
+   - The user would download our application if they are looking for something to help navigate the Chicago food scene. The app would open on the Home page which features a different restaurant/review of a restaurant each day. If they are looking to dive further into the restaurant scene, they could puruse the map of restaurants or use the search page. 
 - Describe the need and purpose of the application
    - This application gives Chicago-area foodies reviews of restaurants around the area. Additionally, this app allows for users to add notes to different restaurants. By storing the capability to both find reviews of local restaurants and maintain notes on these restaurants on a single app, this eliminates the need for users to have to search around for reviews in Chicago and the need to have a separate location to store notes about these restaurants. 
 - Intended target audience
