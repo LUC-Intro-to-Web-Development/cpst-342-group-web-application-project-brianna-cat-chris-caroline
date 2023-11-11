@@ -42,7 +42,7 @@ For this deliverable, you will need to modify the readme file and add responses 
    - Goal 2: Provide reviews of each restaurant.
    - Goal 3: Allow for a customizable map: users can plot their own restaurant points on a map, add private notes about the restaurant, and be able to save the map.
 - Identify tools/software you will use to complete the project.
-   - We will be using Github Codespaces as a collaborative work environment. In terms of languages, we will be using JavaScript, Express.js, and SQLite. To access these Chicago reviews, we will be using a Rest-based Web API. Finally, we will be hosting the app using Heroku. 
+   - We will be using Github Codespaces as a collaborative work environment. In terms of languages, we will be using JavaScript, Express.js, Node.js, and SQLite. To access these Chicago reviews, we will be using a Rest-based Web API. Finally, we will be hosting the app using Heroku. 
 * I suggest using an online coding environment that will allow your team to work collaboratively and practice git commands.  A few are listed below.
    - [CodeSandbox.io](https://codesandbox.io/)
    - [Replit.com](https://replit.com/)
