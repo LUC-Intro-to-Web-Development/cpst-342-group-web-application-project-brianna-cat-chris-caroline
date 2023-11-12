@@ -15,3 +15,9 @@ displayAge(34)
  }
 
  console.log(madLib("quickly", "chased", "dog", "cat", "large"))
+
+ function displayAdd (num1, num2) {
+    console.log(num1 + num2)
+ }
+
+ displayAdd(18, 6)
