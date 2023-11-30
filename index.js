@@ -1,3 +1,19 @@
+const express = require('express')
+const app = express()
+const port = 3000
+
+// view engine setup -> We'll use handlebars.js as our templating engine
+app.set('view engine', 'html');
+// allows our application to use .html extension 
+app.engine('html', require('hbs').__express);
+
+ // parse application/json
+ app.use(express.json());
+
+ // For parsing application/x-www-form-urlencoded
+ app.use(express.urlencoded({ extended: true }));
+
+
 function displayAge(userAge) {
     console.log('I am ' + userAge + ' years old.');
  }
