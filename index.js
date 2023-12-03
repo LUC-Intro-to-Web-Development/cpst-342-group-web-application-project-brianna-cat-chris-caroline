@@ -13,6 +13,25 @@ app.engine('html', require('hbs').__express);
  // For parsing application/x-www-form-urlencoded
  app.use(express.urlencoded({ extended: true }));
 
+ // Route to  home
+app.get('/', function (req, res) {
+	
+   // Use res.sendFile to send an HTML file directly
+   res.render('index');
+})
+
+  //Route to list page
+
+  app.get('/list_lakeview', function (req, res) {
+   
+   //Use res.sendFile to send an HTML file directly
+   res.render('Lakeview List', {title : "List of Restaurants in Lakeview"});
+})
+
+
+
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 // function displayAge(userAge) {
 //     console.log('I am ' + userAge + ' years old.');
