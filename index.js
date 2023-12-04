@@ -1,4 +1,5 @@
 const express = require('express')
+//const dbOperations = require('./database.js')
 const app = express()
 const port = 3000
 
@@ -41,7 +42,14 @@ app.get('/rogerspark', function (req, res) {
    res.render('rogerspark');
 })
 
+//app.post('/get_lakeview', function (req, res) {
+	// Getting body parameters
+	//const {neighborhood} = req.body;
 
+	//dbOperations.getNeighborhoodRestaurants(neighborhood, res);
+	
+	
+//})
  
 
 
