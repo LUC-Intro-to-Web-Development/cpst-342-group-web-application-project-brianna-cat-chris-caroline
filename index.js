@@ -10,6 +10,9 @@ app.engine('html', require('hbs').__express);
  // parse application/json
  app.use(express.json());
 
+ // static files in assets folder
+ app.use(express.static('assets'));
+
  // For parsing application/x-www-form-urlencoded
  app.use(express.urlencoded({ extended: true }));
 

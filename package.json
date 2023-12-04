@@ -4,6 +4,7 @@
   "description": "N/A",
   "main": "test.js",
   "scripts": {
+    "start": "node index.js",
     "test": "N/A"
   },
   "repository": {
