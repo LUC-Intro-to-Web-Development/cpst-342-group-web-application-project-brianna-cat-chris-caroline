@@ -15,23 +15,27 @@
         <div id = "homeheading">
             Chicago Eats!
         </div>
-        
-        <br>
+<ul></ul>
+<script>
 
-		<div id = "location">
-            Restaurant List:
-            <br>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Loop</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Lakeview</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Lincoln Park</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Logan Square</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Rogers Park</button>
-        </div>
+fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(res => {
+      return res.json();
+} ) 
+.then(data =>{
+   data.forEach(restaurant => {
+       
+       if (restaurant.neighborhood == "Lincoln Park"){
+       const markup = `<li>${restaurant.name}</li>`;
+       document.querySelector ('ul').insertAdjacentHTML('beforeend', markup);
+       }
+   });
 
-    </body>
+})
+.catch(error => console.log(error));
+
+</script>
+
+
+</body>
 </html>

@@ -22,16 +22,11 @@
 		<div id = "location">
             Location:
             <br>
+            <button onClick="toLakeview()" class="location" id="Lakeview">Lakeview</button>
             <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Loop</button>
+            <button onClick="toLincolnPark()" class="location" id="Lincoln Park">Lincoln Park</button>
             <br>
-            <button id = "locationbutton" class= "location" onClick = "toLakeview()">Lakeview</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Lincoln Park</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Logan Square</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Rogers Park</button>
+            <button onClick="toRogersPark()" class="location" id="Rogers Park">Rogers Park</button>
         </div>
 
         <br>
@@ -64,18 +59,23 @@
             <button id = "ratingbutton2" onClick = "window.location.href = '';">2</button>
             <button id = "ratingbutton1" onClick = "window.location.href = '';">1</button>
         </div>
+        <script>
+            function toLakeview(){
+            window.location.href = "http://localhost:3000/lakeview";
+        }
+
+        function toLincolnPark(){
+            window.location.href = "http://localhost:3000/lincolnpark";
+        }
+
+        function toRogersPark(){
+            window.location.href = "http://localhost:3000/rogerspark";
+        }
+        </script>
     </body>
     
     <footer>
 
     </footer>
-<script>
- function toLakeview (){
-    window.location.href = "http://localhost:3000/list_lakeview"
-
- }
-
-
-</script>
 
 </html>

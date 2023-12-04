@@ -20,15 +20,26 @@ app.get('/', function (req, res) {
    res.render('index');
 })
 
-  //Route to list page
-
-  app.get('/list_lakeview', function (req, res) {
-   
+app.get('/lakeview', function (req, res) {
+	
    //Use res.sendFile to send an HTML file directly
-   res.render('Lakeview List', {title : "List of Restaurants in Lakeview"});
+   res.render('lakeview');
+})
+
+app.get('/lincolnpark', function (req, res) {
+	
+   //Use res.sendFile to send an HTML file directly
+   res.render('lincolnpark');
+})
+
+app.get('/rogerspark', function (req, res) {
+	
+   //Use res.sendFile to send an HTML file directly
+   res.render('rogerspark');
 })
 
 
+ 
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
