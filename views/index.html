@@ -64,11 +64,11 @@
                 <td>{{this.neighborhood}}</td>
                 <td>{{this.cuisine}}</td>
                 <td>
-                    <form action="/displaypage" method="POST">
-                        <input type="radio" name="rating" value="0">
-                        <input type="radio" name="rating" value="1">
-                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
-                    </form>
+                 
+                        <input type="radio" name="rating" value="Like">
+                        <input type="radio" name="rating" value="Dislike">
+                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}" onClick="displayRestaurant(event)">Display Page</button>
+                 
 
                 </td>
                 
@@ -89,6 +89,11 @@
             <button id = "ratingbutton1" onClick = "window.location.href = '';">1</button>
         </div>
         <script>
+
+        function displayRestaurant(e){
+            var restaurantID = e.target.value;
+            window.location.href= `/restaurant/${restaurantID}`;
+        }
             function toLakeview(){
             window.location.href = "http://localhost:3000/lakeview";
         }

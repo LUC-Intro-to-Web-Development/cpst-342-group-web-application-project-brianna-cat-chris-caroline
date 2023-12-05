@@ -12,72 +12,8 @@
 	</head>
 
 	<body>
-        <div id = "homeheading">
-            Chicago Eats!
-        </div>
-
-        <br>
-
-		<div id = "location">
-            Location:
-            <br>
-            <button onClick="toLakeview()" class="location" id="Lakeview">Lakeview</button>
-            <br>
-            <button onClick="toLincolnPark()" class="location" id="Lincoln Park">Lincoln Park</button>
-            <br>
-            <button onClick="toRogersPark()" class="location" id="Rogers Park">Rogers Park</button>
-        </div>
-
-        <br>
-
-        <div id = "type">
-            Type:
-            <br>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
-            </form>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
-            </form>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Chinese</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">BBQ</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Fast Food</button>
-        
-        </div>
-
-
-        <table style="margin: 20px;">
-            <tr>
-                <th>Name</th>
-                <th>Neighborhood</th>
-                <th>Cuisine</th>
-                <th>Options</th>
-            </tr>
-      
-            <tr>
-                <td>{{this.name}}</td>
-                <td>{{this.neighborhood}}</td>
-                <td>{{this.cuisine}}</td>
-                <td>
-                    <form action="/displaypage" method="POST">
-                        <input type="radio" name="rating" value="0">
-                        <input type="radio" name="rating" value="1">
-                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
-                    </form>
-                    <form action="/delete_item" method="POST">
-                        
-                        <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.id}}">DELETE</button>
-                    </form>
-                </td>
-                
-            </tr>
-      
-    </table>
+        <h2>{{specificRestaurant.name}}</h2>
+        <h2>{{specificRestaurant.neighborhood}}</h2>
 
     </body>
     
