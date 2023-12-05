@@ -15,7 +15,7 @@ let db = new sqlite3.Database('./chirest.db', sqlite3.OPEN_READWRITE, (err) => {
 
 //Add a restaurant item
 let createItem = (aRestaurant, res) =>{
-    var createRestaurantItem = 'INSERT INTO restaurant_items (id, name, neighborhood, rating, cuisine) VALUES (?,?,?,?,?)' //Parameterized Query
+    var createRestaurantItem = 'INSERT INTO restaurant_items (rating) VALUES (?)' //Parameterized Query
     var params = [aRestaurant];
     
     db.run(createRestaurantItem, params, function(err){
