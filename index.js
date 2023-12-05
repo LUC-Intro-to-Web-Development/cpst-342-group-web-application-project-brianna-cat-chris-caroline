@@ -92,9 +92,28 @@ app.post('/cuisine', function (req, res) {
    .catch(error => console.log(error));
 }) //end of cuisine post route
 
+app.post('/neighborhood', function (req, res) {
 
+   var neighborhoodType = req.body.neighborhood;
+   var specificNeighborhood = [];
+   //Make request to API
+   fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(response => {
+      return response.json();
+   } ) 
+   .then(data =>{
+      data.forEach(restaurant => {
+         
+         if (restaurant.neighborhood == neighborhoodType){
+            specificNeighborhood.push(restaurant);
+         }
+      });
+      console.log(specificNeighborhood.length);
+      res.render('index', {specificNeighborhood});
 
-
+   })
+   .catch(error => console.log(error));
+}) //end of neighborhood post route
 
 
 
