@@ -24,7 +24,34 @@ app.get('/', function (req, res) {
    res.render('index');
 })
 
-app.get('/lakeview', function (req, res) {
+
+
+app.post('/displaypage', function (req, res) {
+   console.log('Coming from display page');
+
+   var aRestaurant = req.body.cuisine_display;
+
+   var specificRestaurant;
+   //Make request to API
+   fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(response => {
+      return response.json();
+   } ) 
+   .then(data =>{
+      data.forEach(restaurant => {
+         
+         if (restaurant.id == aRestaurant){
+           specificRestaurant = restaurant;
+         }
+      });
+      console.log(specificCuisine.length);
+      res.render('restaurant', {specificRestaurant});
+
+   })
+   .catch(error => console.log(error));
+}) //end of cuisine post route
+
+/*app.get('/lakeview', function (req, res) {
 	
    //Use res.sendFile to send an HTML file directly
    res.render('lakeview');
@@ -40,7 +67,37 @@ app.get('/rogerspark', function (req, res) {
 	
    //Use res.sendFile to send an HTML file directly
    res.render('rogerspark');
-})
+})*/
+
+app.post('/cuisine', function (req, res) {
+
+   var cuisineGenre = req.body.cuisine;
+   var specificCuisine = [];
+   //Make request to API
+   fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(response => {
+      return response.json();
+   } ) 
+   .then(data =>{
+      data.forEach(restaurant => {
+         
+         if (restaurant.cuisine == cuisineGenre){
+            specificCuisine.push(restaurant);
+         }
+      });
+      console.log(specificCuisine.length);
+      res.render('index', {specificCuisine});
+
+   })
+   .catch(error => console.log(error));
+}) //end of cuisine post route
+
+
+
+
+
+
+
 
 //app.post('/get_lakeview', function (req, res) {
 	// Getting body parameters

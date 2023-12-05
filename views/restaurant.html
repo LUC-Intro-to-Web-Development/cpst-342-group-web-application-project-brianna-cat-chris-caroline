@@ -58,7 +58,7 @@
                 <th>Cuisine</th>
                 <th>Options</th>
             </tr>
-        {{#each specificCuisine}}
+      
             <tr>
                 <td>{{this.name}}</td>
                 <td>{{this.neighborhood}}</td>
@@ -69,38 +69,16 @@
                         <input type="radio" name="rating" value="1">
                         <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
                     </form>
-
+                    <form action="/delete_item" method="POST">
+                        
+                        <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.id}}">DELETE</button>
+                    </form>
                 </td>
                 
             </tr>
-        {{/each}}
+      
     </table>
 
-        <br>
-
-        <div id = "rating">
-            Rating:
-            <br>
-            <br>
-            <button id = "ratingbutton5" onClick = "window.location.href = '';">5</button>
-            <button id = "ratingbutton4" onClick = "window.location.href = '';">4</button>
-            <button id = "ratingbutton3" onClick = "window.location.href = '';">3</button>
-            <button id = "ratingbutton2" onClick = "window.location.href = '';">2</button>
-            <button id = "ratingbutton1" onClick = "window.location.href = '';">1</button>
-        </div>
-        <script>
-            function toLakeview(){
-            window.location.href = "http://localhost:3000/lakeview";
-        }
-
-        function toLincolnPark(){
-            window.location.href = "http://localhost:3000/lincolnpark";
-        }
-
-        function toRogersPark(){
-            window.location.href = "http://localhost:3000/rogerspark";
-        }
-        </script>
     </body>
     
     <footer>
