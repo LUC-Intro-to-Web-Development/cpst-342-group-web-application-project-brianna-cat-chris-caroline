@@ -1,5 +1,5 @@
 const express = require('express')
-//const dbOperations = require('./database.js')
+const dbOperations = require('./database.js')
 const app = express()
 const port = 3000
 
@@ -49,7 +49,17 @@ app.get('/restaurant/:id', function (req, res) {
 
    })
    .catch(error => console.log(error));
+
 }) //end of cuisine post route
+
+app.post('/addRestaurant', function(req, res) {
+   console.log("Entering info from display page");
+
+   var aRestaurant = req.params.cuisine_display;
+
+   dbOperations.createItem(aRestaurant, res);
+
+})
 
 /*app.get('/lakeview', function (req, res) {
 	
