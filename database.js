@@ -31,7 +31,7 @@ let createItem = (name, neighborhood, rating, cuisine, res) =>{
 
 }
 
-//Delete a restaurant item
+/*Delete a restaurant item
 let deleteItem = (recordToDelete, res) =>{
     
     var deleteRestaurantItem = 'DELETE FROM restaurant_items WHERE id = ?';
@@ -49,10 +49,10 @@ let deleteItem = (recordToDelete, res) =>{
 	});
 
     getAllItems(res);
-}
+}*/
 
 //Update a restaurant item
-let updateItem = (name, neighbhorhood, id, rating, cuisine, res) =>{
+/*let updateItem = (name, neighbhorhood, id, rating, cuisine, res) =>{
     var updateGroceryListItem = 'UPDATE restaurant_items SET name = ?, neighborhood = ?, rating = ?, cuisine = ? WHERE id = ?'
     var params = [name, neighbhorhood, id, rating, cuisine];
 
@@ -67,10 +67,10 @@ let updateItem = (name, neighbhorhood, id, rating, cuisine, res) =>{
     })
 
     getAllItems(res);
-}
+}*/
 
 //Display all restaurant items
-let getAllItems = (res) => {
+/*let getAllItems = (res) => {
     var getAllRestaurants = 'SELECT id, name, neighborhood, rating, cuisine FROM restaurant_items';
     db.all(getAllRestaurants, function(err, rows){
         if (err) {
@@ -80,10 +80,10 @@ let getAllItems = (res) => {
           console.log(rows);
 
     })
-}
+}*/
 
 //Display select restaurant items by neighborhood
-let getNeighborhoodRestaurants = (neighbhorhood, res) =>{
+/*let getNeighborhoodRestaurants = (neighbhorhood, res) =>{
     var getNeighborhood = 'SELECT id, name, neighborhood, rating, cuisine FROM restaurant_items WHERE neighborhood = ?' //Parameterized Query
     var params = [neighbhorhood];
     
@@ -99,9 +99,9 @@ let getNeighborhoodRestaurants = (neighbhorhood, res) =>{
     })
     getAllItems(res);
 
-}
+}*/
 
 
 //Display select restaurant items by cuisine
 
-module.exports = {deleteItem, createItem, getAllItems, getNeighborhoodRestaurants, updateItem}
+module.exports = {createItem}
