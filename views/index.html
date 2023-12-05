@@ -21,11 +21,17 @@
 		<div id = "location">
             Location:
             <br>
-            <button onClick="toLakeview()" class="location" id="Lakeview">Lakeview</button>
+            <form action="/neighborhood" method="POST">
+                <button id = "typebutton" name="neighborhood" value="Lakeview">Lakeview</button>
+            </form>
             <br>
-            <button onClick="toLincolnPark()" class="location" id="Lincoln Park">Lincoln Park</button>
+            <form action="/neighborhood" method="POST">
+                <button id = "typebutton" name="neighborhood" value="Lincoln Park">Lincoln Park</button>
+            </form>
             <br>
-            <button onClick="toRogersPark()" class="location" id="Rogers Park">Rogers Park</button>
+            <form action="/neighborhood" method="POST">
+                <button id = "typebutton" name="neighborhood" value="Rogers Park">Lakeview</button>
+            </form>
         </div>
 
         <br>
@@ -42,11 +48,10 @@
                 <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
             </form>
             <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Chinese</button>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="American">American</button>
+            </form>
             <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">BBQ</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Fast Food</button>
         
         </div>
 
@@ -74,8 +79,31 @@
                 
             </tr>
         {{/each}}
-    </table>
+    
+        <br>
+        <table style="margin: 20px;">
+            <tr>
+                <th>Name</th>
+                <th>Neighborhood</th>
+                <th>Cuisine</th>
+                <th>Options</th>
+            </tr>
+        {{#each specificNeighborhood}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.neighborhood}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>
+                    <form action="/displaypage" method="POST">
+                        <input type="radio" name="rating" value="0">
+                        <input type="radio" name="rating" value="1">
+                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
+                    </form>
 
+                </td>
+                
+            </tr>
+        {{/each}}
         <br>
 
         <div id = "rating">
