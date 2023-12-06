@@ -14,9 +14,9 @@ let db = new sqlite3.Database('./chirest.db', sqlite3.OPEN_READWRITE, (err) => {
 });
 
 //Add a restaurant item
-let createItem = (aRestaurant, res) =>{
-    var createRestaurantItem = 'INSERT INTO restaurant_items (rating) VALUES (?)' //Parameterized Query
-    var params = [aRestaurant];
+let createItem = (restaurantName, neighborhood, rating, res) =>{
+    var createRestaurantItem = 'INSERT INTO restaurant_items (name, neighborhood, rating) VALUES (?,?,?)' //Parameterized Query
+    var params = [restaurantName, neighborhood, rating];
     
     db.run(createRestaurantItem, params, function(err){
 
@@ -54,8 +54,8 @@ let createItem = (aRestaurant, res) =>{
 }*/
 
 //Update a restaurant item
-/*let updateItem = (name, neighbhorhood, id, rating, cuisine, res) =>{
-    var updateGroceryListItem = 'UPDATE restaurant_items SET name = ?, neighborhood = ?, rating = ?, cuisine = ? WHERE id = ?'
+/*let updateItem = (aRestaurant, res) =>{
+    var updateRestaurantItem = 'UPDATE restaurant_items SET rating = 5 WHERE name = ?';
     var params = [name, neighbhorhood, id, rating, cuisine];
 
     db.run(updateGroceryListItem, params, function(err) {
@@ -80,7 +80,7 @@ let getAllItems = (res) => {
             throw err;
           }
           console.log(rows);
-
+          
     })
 }
 

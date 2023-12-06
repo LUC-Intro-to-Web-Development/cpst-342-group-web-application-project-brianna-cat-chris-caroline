@@ -55,9 +55,15 @@ app.get('/restaurant/:id', function (req, res) {
 app.post('/addRestaurant', function(req, res) {
    console.log("Entering info from display page");
 
-   var aRestaurantRating = req.params.cuisine_display;
+   var restaurantName = req.body.cuisine_display;
+   var rating = req.body.rate;
+   var neighborhood = req.body.neighborhood;
 
-   dbOperations.createItem(aRestaurantRating, res);
+   console.log(restaurantName);
+   console.log(rating);
+   console.log(neighborhood);
+
+   dbOperations.createItem(restaurantName, neighborhood, rating, res);
 
 })
 
