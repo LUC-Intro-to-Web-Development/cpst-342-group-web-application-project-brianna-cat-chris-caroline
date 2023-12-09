@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Chicago Eats</title>
+		<link rel = "stylesheet" href = "./css/style.css" type = "text/css">
+		<meta charset = "UTF-8">
+		<meta name = "description" content = "Chicago Eats">
+		<meta name = "keywords" content = "brianna wright, caitlin cabanas, caroline houser, chris sinclair, chicago, restaurants, reviews, ratings">
+		<meta name = "author" content = "Brianna Wright, Caitlin Cabanas Caroline Houser, Chris Sinclair">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	</head>
+
+	<body>
+        <div id = "homeheading">
+            Chicago Eats!
+        </div>
+<ul></ul>
+<script>
+
+fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(res => {
+      return res.json();
+} ) 
+.then(data =>{
+   data.forEach(restaurant => {
+       
+       if (restaurant.neighborhood == "Rogers Park"){
+       const markup = `<li>${restaurant.name}</li>`;
+       document.querySelector ('ul').insertAdjacentHTML('beforeend', markup);
+       }
+   });
+
+})
+.catch(error => console.log(error));
+
+</script>
+
+
+</body>
+</html>

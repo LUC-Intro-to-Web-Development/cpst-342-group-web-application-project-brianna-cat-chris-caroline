@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12717085&assignment_repo_type=AssignmentRepo)
 # CPST 342 Group Project Repository 
 
 You will complete three assignments that will culminate in developing a monolithic full-stack web application. 
@@ -23,13 +24,25 @@ After this course, your application will consist of the following components lis
 For this deliverable, you will need to modify the readme file and add responses to the questions below. that you are currently reading and address the following items below using a variety of permissible markdown syntax.
 
 - Provide your name or the team's name
+   - Caroline, Cat, Chris, and Brianna
 - Name of the application
+   - Chicago Eats
 - Description of application *Describe how someone will use your application
+   - The user would download our application if they are looking for something to help navigate the Chicago food scene. The app would open on the Home page which features a different restaurant/review of a restaurant each day. If they are looking to dive further into the restaurant scene, they could puruse the map of restaurants or use the search page. 
 - Describe the need and purpose of the application
+   - This application gives Chicago-area foodies reviews of restaurants around the area. Additionally, this app allows for users to add notes to different restaurants. By storing the capability to both find reviews of local restaurants and maintain notes on these restaurants on a single app, this eliminates the need for users to have to search around for reviews in Chicago and the need to have a separate location to store notes about these restaurants. 
 - Intended target audience
+   - The target audience for this app would be for Chicago locals who are looking for Chicago restaurants that have other Chicago locals' stamp of approval. 
 - Identify the various pages your application will have and describe what users will be able to accomplish
+   - Page 1: Home Page - The app opens on the Home page. The home page features a new review of a restaurant/a different restaurant each day. That is the only thing on the home page.
+   - Page 2: The Map - The map features the restaurants contained in the app. It also offers a customizable feature.
+   - Page 3: Search - The search page serves a dual purpose. It allows the user to either browse by cuisine or search specific terms in a search bar.
 - Identify three goals of the application
-- Identify tools/software you will use to complete the project. 
+   - Goal 1: Feature and promote local Chicago restaurants all in one place, and only Chicago restaurants.
+   - Goal 2: Provide reviews of each restaurant.
+   - Goal 3: Allow for a customizable map: users can plot their own restaurant points on a map, add private notes about the restaurant, and be able to save the map.
+- Identify tools/software you will use to complete the project.
+   - We will be using Github Codespaces as a collaborative work environment. In terms of languages, we will be using JavaScript, Express.js, Node.js, and SQLite. To access these Chicago reviews, we will be using a Rest-based Web API. Finally, we will be hosting the app using Heroku. 
 * I suggest using an online coding environment that will allow your team to work collaboratively and practice git commands.  A few are listed below.
    - [CodeSandbox.io](https://codesandbox.io/)
    - [Replit.com](https://replit.com/)

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Chicago Eats</title>
+		<link rel = "stylesheet" href = "./css/style.css" type = "text/css">
+        <script src="https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants" defer></script>
+		<meta charset = "UTF-8">
+		<meta name = "description" content = "Chicago Eats">
+		<meta name = "keywords" content = "brianna wright, caitlin cabanas, caroline houser, chris sinclair, chicago, restaurants, reviews, ratings">
+		<meta name = "author" content = "Brianna Wright, Caitlin Cabanas Caroline Houser, Chris Sinclair">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	</head>
+
+	<body>
+        <div id = "homeheading">
+            Chicago Eats!
+        </div>
+
+        <br>
+
+		<div id = "location">
+            Location:
+            <br>
+            <form action="/neighborhood" method="POST">
+                <button id = "typebutton" name="neighborhood" value="Lakeview">Lakeview</button>
+            </form>
+            <br>
+            <form action="/neighborhood" method="POST">
+                <button id = "typebutton" name="neighborhood" value="Lincoln Park">Lincoln Park</button>
+            </form>
+            <br>
+            <form action="/neighborhood" method="POST">
+                <button id = "typebutton" name="neighborhood" value="Rogers Park">Lakeview</button>
+            </form>
+        </div>
+
+        <br>
+
+        <div id = "type">
+            Type:
+            <br>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
+            </form>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
+            </form>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="American">American</button>
+            </form>
+            <br>
+        
+        </div>
+
+
+        <table style="margin: 20px;">
+            <tr>
+                <th>Name</th>
+                <th>Neighborhood</th>
+                <th>Cuisine</th>
+                <th>Options</th>
+            </tr>
+        {{#each specificCuisine}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.neighborhood}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>
+                    <form action="/displaypage" method="POST">
+                        <input type="radio" name="rating" value="0">0</forminput>
+                        <input type="radio" name="rating" value="1">1</forminput>
+                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
+                    </form>
+
+                </td>
+                
+            </tr>
+        {{/each}}
+    
+        <br>
+        <table style="margin: 20px;">
+            <tr>
+                <th>Name</th>
+                <th>Neighborhood</th>
+                <th>Cuisine</th>
+                <th>Options</th>
+            </tr>
+        {{#each specificNeighborhood}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.neighborhood}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>
+                    <form action="/displaypage" method="POST">
+                        <input type="radio" name="rating0" value="0">0</forminput>
+                        <input type="radio" name="rating1" value="1">1</forminput>
+                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
+                    </form>
+
+                </td>
+                
+            </tr>
+        {{/each}}
+        <br>
+
+        <div id = "rating">
+            Rating:
+            <br>
+            <br>
+            <button id = "ratingbutton5" onClick = "window.location.href = '';">5</button>
+            <button id = "ratingbutton4" onClick = "window.location.href = '';">4</button>
+            <button id = "ratingbutton3" onClick = "window.location.href = '';">3</button>
+            <button id = "ratingbutton2" onClick = "window.location.href = '';">2</button>
+            <button id = "ratingbutton1" onClick = "window.location.href = '';">1</button>
+        </div>
+        <script>
+            function toLakeview(){
+            window.location.href = "http://localhost:3000/lakeview";
+        }
+
+        function toLincolnPark(){
+            window.location.href = "http://localhost:3000/lincolnpark";
+        }
+
+        function toRogersPark(){
+            window.location.href = "http://localhost:3000/rogerspark";
+        }
+        </script>
+    </body>
+    
+    <footer>
+
+    </footer>
+
+</html>

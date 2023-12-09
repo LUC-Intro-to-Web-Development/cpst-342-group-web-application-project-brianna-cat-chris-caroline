@@ -1,0 +1,31 @@
+{
+  "name": "quickbite",
+  "version": "1.0.0",
+  "description": "N/A",
+  "main": "test.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "N/A"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N/A.git"
+  },
+  "keywords": [
+    "N/A"
+  ],
+  "author": "C. Sinclair",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/N/A/issues"
+  },
+  "homepage": "https://github.com/N/A#readme",
+  "dependencies": {
+    "connect-sqlite3": "^0.9.13",
+    "express": "^4.18.2",
+    "handlebars": "^4.7.8",
+    "hbs": "^4.2.0",
+    "quickbite": "^1.0.0",
+    "sqlite3": "^5.1.6"
+  }
+}

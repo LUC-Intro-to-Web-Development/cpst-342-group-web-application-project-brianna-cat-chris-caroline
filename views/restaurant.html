@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Chicago Eats</title>
+		<link rel = "stylesheet" href = "./css/style.css" type = "text/css">
+        <script src="https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants" defer></script>
+		<meta charset = "UTF-8">
+		<meta name = "description" content = "Chicago Eats">
+		<meta name = "keywords" content = "brianna wright, caitlin cabanas, caroline houser, chris sinclair, chicago, restaurants, reviews, ratings">
+		<meta name = "author" content = "Brianna Wright, Caitlin Cabanas Caroline Houser, Chris Sinclair">
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+	</head>
+
+	<body>
+        <div id = "homeheading">
+            Chicago Eats!
+        </div>
+
+        <br>
+
+		<div id = "location">
+            Location:
+            <br>
+            <button onClick="toLakeview()" class="location" id="Lakeview">Lakeview</button>
+            <br>
+            <button onClick="toLincolnPark()" class="location" id="Lincoln Park">Lincoln Park</button>
+            <br>
+            <button onClick="toRogersPark()" class="location" id="Rogers Park">Rogers Park</button>
+        </div>
+
+        <br>
+
+        <div id = "type">
+            Type:
+            <br>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
+            </form>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
+            </form>
+            <br>
+            <button id = "typebutton" onClick = "window.location.href = '';">Chinese</button>
+            <br>
+            <button id = "typebutton" onClick = "window.location.href = '';">BBQ</button>
+            <br>
+            <button id = "typebutton" onClick = "window.location.href = '';">Fast Food</button>
+        
+        </div>
+
+
+        <table style="margin: 20px;">
+            <tr>
+                <th>Name</th>
+                <th>Neighborhood</th>
+                <th>Cuisine</th>
+                <th>Options</th>
+            </tr>
+      
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.neighborhood}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>
+                    <form action="/displaypage" method="POST">
+                        <input type="radio" name="rating" value="0">
+                        <input type="radio" name="rating" value="1">
+                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
+                    </form>
+                    <form action="/delete_item" method="POST">
+                        
+                        <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.id}}">DELETE</button>
+                    </form>
+                </td>
+                
+            </tr>
+      
+    </table>
+
+    </body>
+    
+    <footer>
+
+    </footer>
+
+</html>
