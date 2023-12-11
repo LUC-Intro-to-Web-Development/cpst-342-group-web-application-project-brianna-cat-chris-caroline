@@ -1,119 +1,91 @@
-#homeheading {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding:  30px;
-    max-width: 1000px;
-
-}
-
-#location {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-	padding:  30px;
-	max-width: 1000px;
-}
-
-#type {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-	padding:  30px;
-	max-width: 1000px;
-}
-
-#rating {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-	padding:  30px;
-	max-width: 1000px;
-}
-
-/* Location Buttons */
-
-#locationbutton {
-	background-color: green;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-    border: none;
-	cursor: pointer;
-    margin: 2px;	
-    border-radius: 5px;
-}
-
-/* Type Buttons */
-
-#typebutton {
-	background-color: green;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-    border: none;
-	cursor: pointer;
-    margin: 2px;	
-    border-radius: 5px;
-}
-
-/* Rating Buttons */
-
-#ratingbutton5 {
-	background-color: green;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
+.header {
+	padding: 60px;
+	text-align: center;
+	background: #b1ddf3;
+	color: #00000;
+	font-size: 30px;
+  }
+  .header-border{
+  border-width:3px;
+  border-style:solid;
+  border-color: black;
+  }
+  
+  .header-text {
+  text-align: center;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  }
+  
+  .dropbtn {
+	background-color: #ff0000;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
 	border: none;
+	width: 100%;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	float: left;
 	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
-
-#ratingbutton4 {
-	background-color: rgb(60, 80, 20);
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
+  }
+  
+  .dropdown-btn{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	float: left;
+	cursor: pointer;
+  }
+  
+  .button {
+	background-color: white;
 	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border: 2px solid #ffbb45;
+	width: 100%;
+  }
+  
+  .button:hover {
+	background-color: #ffbb45;
+	color: white;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: relative;
+	background-color: white;
+	min-width: 160px;
+	width: 100%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	text-align: center
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: 	#D10303;}
 
-#ratingbutton3 {
-	background-color: yellow;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
-
-#ratingbutton2 {
-	background-color: orange;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
-
-#ratingbutton1 {
-	background-color: red;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}

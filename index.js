@@ -1,7 +1,8 @@
-const express = require('express')
-const dbOperations = require('./database.js')
-const app = express()
-const port = 3000
+const express = require('express');
+const path = require('path');
+const dbOperations = require('./database.js');
+const app = express();
+const port = 3000;
 
 // view engine setup -> We'll use handlebars.js as our templating engine
 app.set('view engine', 'html');
@@ -12,7 +13,8 @@ app.engine('html', require('hbs').__express);
  app.use(express.json());
 
  // static files in assets folder
- app.use(express.static('assets'));
+ app.use("/assets", express.static(path.join(__dirname, 'assets')));
+ app.use("/css", express.static(path.join(__dirname, 'css')));
 
  // For parsing application/x-www-form-urlencoded
  app.use(express.urlencoded({ extended: true }));
@@ -74,6 +76,7 @@ app.get('/rogerspark', function (req, res) {
 app.post('/cuisine', function (req, res) {
 
    var cuisineGenre = req.body.cuisine;
+   console.log(cuisineGenre);
    var specificCuisine = [];
    //Make request to API
    fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')

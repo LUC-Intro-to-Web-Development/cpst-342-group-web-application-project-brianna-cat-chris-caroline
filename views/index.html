@@ -2,7 +2,7 @@
 <html lang = "en">
 	<head>
 		<title>Chicago Eats</title>
-		<link rel = "stylesheet" href = "./css/style.css" type = "text/css">
+		<link rel = "stylesheet" href = "/css/style.css" type = "text/css">
         <script src="https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants" defer></script>
 		<meta charset = "UTF-8">
 		<meta name = "description" content = "Chicago Eats">
@@ -12,50 +12,44 @@
 	</head>
 
 	<body>
-        <div id = "homeheading">
-            Chicago Eats!
-        </div>
-
-        <br>
-
-		<div id = "location">
-            Location:
-            <br>
+        <div class="header">
+            <div class= “header-image”>
+            <div class="header-border">
+            <div class= “header-text”>
+                <h1> Chicago Eats</h1>
+            </div>
+              </div></div></div>
+          
+          
+          <div class="dropdown">
+            <button class="dropbtn">Locations</button>
+            <div class="dropdown-content">
+                <form action="/neighborhood" method="POST">
+            <div class="dropdown-btn"><button type="submit" class="button" id = "typebutton" name="neighborhood" value="Lakeview">Lakeview</button></div>
+              </form>
             <form action="/neighborhood" method="POST">
-                <button id = "typebutton" name="neighborhood" value="Lakeview">Lakeview</button>
-            </form>
-            <br>
+                <div class="dropdown-btn"><button type="submit" class="button" id = "typebutton" name="neighborhood" value="Rogers Park">Rogers Park</button></div>
+              </form>
             <form action="/neighborhood" method="POST">
-                <button id = "typebutton" name="neighborhood" value="Lincoln Park">Lincoln Park</button>
-            </form>
-            <br>
-            <form action="/neighborhood" method="POST">
-                <button id = "typebutton" name="neighborhood" value="Rogers Park">Lakeview</button>
-            </form>
-        </div>
+                <div class="dropdown-btn"><button type="submit" class="button" id = "typebutton" name="neighborhood" value="Lincoln Park">Lincoln Park</button></div>
+            </form></div>
+          </div>
+          
+          <div id = "type" class="dropdown">
+          <button class="dropbtn">Style</button>
+            <div class="dropdown-content">
+                <form action="/cuisine" method="POST">
+                <div class="dropdown-btn"><button type="submit" class="button" id = "typebutton" name="cuisine" value="Mexican">Mexican</button></div>
+                </form>
+                <form action="/cuisine" method="POST">
+                <div class="dropdown-btn"><button type="submit" class="button" id = "typebutton" name="cuisine" value="Italian">Italian</button></div>
+                </form>
+                <form action="/cuisine" method="POST">
+                <div class="dropdown-btn"><button type="submit" class="button" id = "typebutton" name="cuisine" value="American">American</button></div>
+                </form>
+            </div></div>
 
-        <br>
-
-        <div id = "type">
-            Type:
-            <br>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
-            </form>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
-            </form>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="American">American</button>
-            </form>
-            <br>
-        
-        </div>
-
-
+        <!-- GROUP CODE-->     
         <table style="margin: 20px;">
             <tr>
                 <th>Name</th>
