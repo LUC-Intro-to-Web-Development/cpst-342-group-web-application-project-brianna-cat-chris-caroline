@@ -1,150 +1,293 @@
-#homeheading {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding:  30px;
-    max-width: 1000px;
+            /* Grid Layout */
+            body {
+                background-color: lightblue;
 
-}
 
-#location {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-	padding:  30px;
-	max-width: 1000px;
-}
+            }
 
-#type {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-	padding:  30px;
-	max-width: 1000px;
-}
+            .gridcontainer {
+                display:grid;
+                border: 2px red;
+                justify-content: space-evenly;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 300px 60px 325px 500px;
+                grid-template-areas: 
+                    "topcontainer topcontainer"
+                    "subheadingcontainer subheadingcontainer"
+                    "midleftcontainer midrightcontainer"
+                    "bottomleftcontainer bottomrightcontainer";
+                padding: 10px;
+                max-width: 1000px;
 
-#rating {
-    margin:  auto;
-    border: 2px solid red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-	padding:  30px;
-	max-width: 1000px;
-}
+            }
 
-/* Location Buttons */
+            .topcontainer {
+                grid-row: 1;
+                grid-column-start: 1;
+                grid-column-end: 3;
+                border: 2px solid red;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
 
-#locationbutton {
-	background-color: green;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-    border: none;
-	cursor: pointer;
-    margin: 2px;	
-    border-radius: 5px;
-}
+            .subheadingcontainer {
+                grid-row: 2;
+                grid-column-start: 1;
+                grid-column-end: 3;
 
-/* Type Buttons */
+                align-items: center;
 
-#typebutton {
-	background-color: green;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-    border: none;
-	cursor: pointer;
-    margin: 2px;	
-    border-radius: 5px;
-}
+                border: 2px solid red;
+                font-size:  35px;
+	            font-family: Permanent Marker;
+                color: #cbc8ff;
+                -webkit-text-stroke: 1px black;
+                text-shadow: 2px 2px black;
+                text-align: center;
+            }
 
-/* Rating Buttons */
+    
+            .midleftcontainer {
+                grid-row: 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid red;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
 
-#ratingbutton5 {
-	background-color: green;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
+            }
+            .midrightcontainer {
+                grid-row: 3;
+                padding-top: 7px;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid red;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            .bottomleftcontainer {
+                grid-row: 4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid red;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
 
-#ratingbutton4 {
-	background-color: rgb(60, 80, 20);
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
+            .bottomrightcontainer {
+                grid-row: 4;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid red;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
 
-#ratingbutton3 {
-	background-color: yellow;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
 
-#ratingbutton2 {
-	background-color: orange;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
+            /* Location Buttons */
+            .map {
+                position:relative;
+                width: 100%;
+            }
+    
+            .map img {
+                width: 100%;
+                height: auto;
+                border-style: outset;
+            }
+    
+            .map .rogerspark {
+                position: absolute;
+                top: 15%;
+                left: 61%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+				font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                background-color: green;
+                height: 80x;
+                width: 110px;
+            }
+    
+            .map .rogerspark:hover {
+                background-color: lightgreen;
+            }
 
-#ratingbutton1 {
-	background-color: red;
-	color:  white;
-	font-size:  25px;
-	font-family: arial;
-	border: none;
-	cursor: pointer;
-    border-radius: 5px;
-    margin: 2px;	
-}
+            .map .lakeview {
+                position: absolute;
+                top: 52%;
+                left: 68%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+				font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                background-color: green;
+                height: 80px;
+                width: 110px;
+            }
+    
+            .map .lakeview:hover {
+                background-color: lightgreen;
+            }
 
-/* styling the button test */
+            .map .lincolnpark {
+                position: absolute;
+                top: 78%;
+                left: 75%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+				font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                background-color: green;
+                height: 80px;
+                width: 110px;
+            }
+    
+            .map .lincolnpark:hover {
+                background-color: lightgreen;
+            }
 
-.locationtest {
-	position: relative;
-	width: 50%;
-}
+            /* Type Buttons */
 
-.locationtest img {
-	width: 100%;
-	height: auto;
-}
+            /* Italian Button */
 
-.locationtest .rogerspark {
-	position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #555;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
+            #typebutton {
+                background-color: green;
+                color:  white;
+                height: 80px;
+                width: 250px;
+                font-size:  20px;
+                border: none;
+                cursor: pointer;
+                margin: 2px;	
+                border-radius: 5px;
+            }
 
-.locationtest .rogerspark:hover {
-	background-color: black;
-}
+            #typebutton:hover {
+                background-color: lightgreen;
+            }
+
+            .italiantype {
+                position: relative;
+                width: 300px;
+                height: 100px;
+                margin: auto;
+            }
+
+            .italiantype img {
+                width: 100%;
+                height: 100px;
+                border-radius: 10px;
+            }
+
+            .italiantype .italianbtn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                background-color: green;
+                color: white;
+				font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                padding: 24px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            .italiantype .italianbtn:hover {
+                background-color: lightgreen;
+            }
+
+            /* Mexican Button */
+
+            .mexicantype {
+                position: relative;
+                width: 300px;
+                height: 100px;
+                margin: auto;
+            }
+
+            .mexicantype img {
+                width: 100%;
+                height: 100px;
+                border-radius: 10px;
+            }
+
+            .mexicantype .mexicanbtn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                background-color: green;
+                color: white;
+				font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                padding: 24px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            .mexicantype .mexicanbtn:hover {
+                background-color: lightgreen;
+            }
+
+            /* American Button */
+
+            .americantype {
+                position: relative;
+                width: 300px;
+                height: 100px;
+                margin: auto;
+            }
+
+            .americantype img {
+                width: 100%;
+                height: 100px;
+                border-radius: 10px;
+            }
+
+            .americantype .americanbtn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                background-color: green;
+                color: white;
+				font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                padding: 24px 24px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            .americantype .americanbtn:hover {
+                background-color: lightgreen;
+            }
+    

@@ -13,6 +13,7 @@ app.engine('html', require('hbs').__express);
 
  // static files in assets folder
  app.use(express.static('assets'));
+ app.use(express.static('css'));
 
  // For parsing application/x-www-form-urlencoded
  app.use(express.urlencoded({ extended: true }));
@@ -50,11 +51,9 @@ app.get('/restaurant/:id', function (req, res) {
    })
    .catch(error => console.log(error));
 
-<<<<<<< HEAD
-   //dbOperations.createItem(aRestaurant, res);
-=======
->>>>>>> api
-}) //end of cuisine post route
+}) 
+
+//end of cuisine post route
 
 app.post('/addRestaurant', function(req, res) {
    console.log("Entering info from display page");
@@ -92,7 +91,8 @@ app.get('/rogerspark', function (req, res) {
 app.post('/cuisine', function (req, res) {
 
    var cuisineGenre = req.body.cuisine;
-   var specificCuisine = [];
+   // var specificCuisine = [];
+   var rest = [];
    //Make request to API
    fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
    .then(response => {
@@ -102,11 +102,11 @@ app.post('/cuisine', function (req, res) {
       data.forEach(restaurant => {
          
          if (restaurant.cuisine == cuisineGenre){
-            specificCuisine.push(restaurant);
+            rest.push(restaurant);
          }
       });
-      console.log(specificCuisine.length);
-      res.render('index', {specificCuisine});
+      console.log(rest.length);
+      res.render('index', {rest});
 
    })
    .catch(error => console.log(error));
@@ -115,7 +115,8 @@ app.post('/cuisine', function (req, res) {
 app.post('/neighborhood', function (req, res) {
 
    var neighborhoodType = req.body.neighborhood;
-   var specificNeighborhood = [];
+   // var specificNeighborhood = [];
+   var rest = [];
    //Make request to API
    fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
    .then(response => {
@@ -125,17 +126,15 @@ app.post('/neighborhood', function (req, res) {
       data.forEach(restaurant => {
          
          if (restaurant.neighborhood == neighborhoodType){
-            specificNeighborhood.push(restaurant);
+            rest.push(restaurant);
          }
       });
-      console.log(specificNeighborhood.length);
-      res.render('index', {specificNeighborhood});
+      console.log(rest.length);
+      res.render('index', {rest});
 
    })
    .catch(error => console.log(error));
 }) //end of neighborhood post route
-
-
 
 
 //app.post('/get_lakeview', function (req, res) {

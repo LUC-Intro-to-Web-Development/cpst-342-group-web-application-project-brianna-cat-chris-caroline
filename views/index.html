@@ -2,7 +2,7 @@
 <html lang = "en">
 	<head>
 		<title>Chicago Eats</title>
-		<link rel = "stylesheet" href = "../css/style.css" type = "text/css" />
+		<link rel = "stylesheet" href = "style.css" type = "text/css" />
         <script src="https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants" defer></script>
 		<meta charset = "UTF-8">
 		<meta name = "description" content = "Chicago Eats">
@@ -10,297 +10,7 @@
 		<meta name = "author" content = "Brianna Wright, Caitlin Cabanas Caroline Houser, Chris Sinclair">
 		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
 
-        <style>
 
-            /* Grid Layout */
-            body {
-                background-color: lightblue;
-
-
-            }
-
-            .gridcontainer {
-                display:grid;
-                border: 2px red;
-                justify-content: space-evenly;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 300px 60px 325px 500px;
-                grid-template-areas: 
-                    "topcontainer topcontainer"
-                    "subheadingcontainer subheadingcontainer"
-                    "midleftcontainer midrightcontainer"
-                    "bottomleftcontainer bottomrightcontainer";
-                padding: 10px;
-                max-width: 1000px;
-
-            }
-
-            .topcontainer {
-                grid-row: 1;
-                grid-column-start: 1;
-                grid-column-end: 3;
-                border: 2px solid red;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-
-            .subheadingcontainer {
-                grid-row: 2;
-                grid-column-start: 1;
-                grid-column-end: 3;
-
-                align-items: center;
-
-                border: 2px solid red;
-                font-size:  35px;
-	            font-family: Permanent Marker;
-                color: #cbc8ff;
-                -webkit-text-stroke: 1px black;
-                text-shadow: 2px 2px black;
-                text-align: center;
-            }
-
-    
-            .midleftcontainer {
-                grid-row: 3;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid red;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-
-            }
-            .midrightcontainer {
-                grid-row: 3;
-                padding-top: 7px;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid red;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-            .bottomleftcontainer {
-                grid-row: 4;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid red;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-
-            .bottomrightcontainer {
-                grid-row: 4;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid red;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-
-
-            /* Location Buttons */
-            .map {
-                position:relative;
-                width: 100%;
-            }
-    
-            .map img {
-                width: 100%;
-                height: auto;
-                border-style: outset;
-            }
-    
-            .map .rogerspark {
-                position: absolute;
-                top: 15%;
-                left: 61%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                color: white;
-                padding: 12px 24px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                font-size: 20px;
-                background-color: green;
-                height: 80x;
-                width: 110px;
-            }
-    
-            .map .rogerspark:hover {
-                background-color: lightgreen;
-            }
-
-            .map .lakeview {
-                position: absolute;
-                top: 52%;
-                left: 68%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                color: white;
-                padding: 12px 24px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                font-size: 20px;
-                background-color: green;
-                height: 80px;
-                width: 110px;
-            }
-    
-            .map .lakeview:hover {
-                background-color: lightgreen;
-            }
-
-            .map .lincolnpark {
-                position: absolute;
-                top: 78%;
-                left: 75%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                color: white;
-                padding: 12px 24px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                font-size: 20px;
-                background-color: green;
-                height: 80px;
-                width: 110px;
-            }
-    
-            .map .lincolnpark:hover {
-                background-color: lightgreen;
-            }
-
-            /* Type Buttons */
-
-            /* Italian Button */
-
-            #typebutton {
-                background-color: green;
-                color:  white;
-                height: 80px;
-                width: 250px;
-                font-size:  20px;
-                border: none;
-                cursor: pointer;
-                margin: 2px;	
-                border-radius: 5px;
-            }
-
-            #typebutton:hover {
-                background-color: lightgreen;
-            }
-
-            .italiantype {
-                position: relative;
-                width: 300px;
-                height: 100px;
-                margin: auto;
-            }
-
-            .italiantype img {
-                width: 100%;
-                height: 100px;
-                border-radius: 10px;
-            }
-
-            .italiantype .italianbtn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                background-color: green;
-                color: white;
-                font-size: 20px;
-                padding: 24px 24px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-            }
-
-            .italiantype .italianbtn:hover {
-                background-color: lightgreen;
-            }
-
-            /* Mexican Button */
-
-            .mexicantype {
-                position: relative;
-                width: 300px;
-                height: 100px;
-                margin: auto;
-            }
-
-            .mexicantype img {
-                width: 100%;
-                height: 100px;
-                border-radius: 10px;
-            }
-
-            .mexicantype .mexicanbtn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                background-color: green;
-                color: white;
-                font-size: 20px;
-                padding: 24px 24px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-            }
-
-            .mexicantype .mexicanbtn:hover {
-                background-color: lightgreen;
-            }
-
-            /* American Button */
-
-            .americantype {
-                position: relative;
-                width: 300px;
-                height: 100px;
-                margin: auto;
-            }
-
-            .americantype img {
-                width: 100%;
-                height: 100px;
-                border-radius: 10px;
-            }
-
-            .americantype .americanbtn {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                background-color: green;
-                color: white;
-                font-size: 20px;
-                padding: 24px 24px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-            }
-
-            .americantype .americanbtn:hover {
-                background-color: lightgreen;
-            }
-    
-
-        </style>
 
 	</head>
 
@@ -311,7 +21,7 @@
             </div>
 
             <div class="subheadingcontainer">
-                Select desired location <u>OR</u> type of food below:
+                Select neighborhood <u>OR</u> type of food below:
             
             
             </div>
@@ -327,48 +37,7 @@
                 </form>
             </div>
 
-<<<<<<< HEAD
             <div class="midrightcontainer">
-=======
-        <br>
-
-        <div id = "type">
-            Type:
-            <br>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
-            </form>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
-            </form>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Chinese</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">BBQ</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Fast Food</button>
-        
-        </div>
-
-
-        <table style="margin: 20px;">
-            <tr>
-                <th>Name</th>
-                <th>Neighborhood</th>
-                <th>Cuisine</th>
-                <th>Options</th>
-            </tr>
-        {{#each specificCuisine}}
-            <tr>
-                <td>{{this.name}}</td>
-                <td>{{this.neighborhood}}</td>
-                <td>{{this.cuisine}}</td>
-                <td>
-                    <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}" onClick="displayRestaurant(event)">Display Page</button>
-                </td>
->>>>>>> api
                 
                 <div class="italiantype">
                     <img src="/italianfood.PNG" alt="Italian">
@@ -401,16 +70,16 @@
                         <th>Cuisine</th>
                         <th>Options</th>
                     </tr>
-                {{#each specificCuisine}}
+                {{#each rest}}
                     <tr>
                         <td>{{this.name}}</td>
                         <td>{{this.neighborhood}}</td>
                         <td>{{this.cuisine}}</td>
                         <td>
-                            <form action="/displaypage" method="POST">
+                            <form action="/restaurant/:id" method="GET">
                                 <input type="radio" name="rating" value="0">0</forminput>
                                 <input type="radio" name="rating" value="1">1</forminput>
-                                <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
+                                <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}" onClick="displayRestaurant(event)">Display Info</button>
                             </form>
         
                         </td>
@@ -421,52 +90,24 @@
             </div>
 
             <div class="bottomrightcontainer">
-                <table style="margin: 20px;">
-                    <tr>
-                        <th>Name</th>
-                        <th>Neighborhood</th>
-                        <th>Cuisine</th>
-                        <th>Options</th>
-                    </tr>
-                {{#each specificNeighborhood}}
-                    <tr>
-                        <td>{{this.name}}</td>
-                        <td>{{this.neighborhood}}</td>
-                        <td>{{this.cuisine}}</td>
-                        <td>
-                            <form action="/displaypage" method="POST">
-                                <input type="radio" name="rating0" value="0">0</forminput>
-                                <input type="radio" name="rating1" value="1">1</forminput>
-                                <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
-                            </form>
-                        </td>
-                    </tr>
+                {{#each specificRestaurant}}
+                <strong>{{this.name}}</strong>
+                <br>
+                {{this.neighborhood}}
+                <br>
+                {{this.cuisine}}
+                <br>
+                {{this.rating}}
                 {{/each}}
-                </table>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-        <script>
-
-        function displayRestaurant(e){
-            var restaurantID = e.target.value;
-            window.location.href= `/restaurant/${restaurantID}`;
-        }
-            function toLakeview(){
-            window.location.href = "http://localhost:3000/lakeview";
-        }
-
-        function toLincolnPark(){
-            window.location.href = "http://localhost:3000/lincolnpark";
-        }
-
-        function toRogersPark(){
-            window.location.href = "http://localhost:3000/rogerspark";
-        }
-        </script>
->>>>>>> api
     </body>
     <footer>
     </footer>
+    <script>
+        function displayRestaurant(e) {
+            var restaurantID = e.target.value;
+            window.location.href = "/restaurant/${restaurantID}";
+        }
+    </script>
 </html>

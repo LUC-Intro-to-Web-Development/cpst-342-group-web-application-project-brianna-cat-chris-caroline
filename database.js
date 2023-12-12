@@ -33,13 +33,8 @@ let createItem = (restaurantName, neighborhood, rating, res) =>{
 
 }
 
-<<<<<<< HEAD
-/*Delete a restaurant item
-let deleteItem = (recordToDelete, res) =>{
-=======
 //Delete a restaurant item
 /*let deleteItem = (recordToDelete, res) =>{
->>>>>>> api
     
     var deleteRestaurantItem = 'DELETE FROM restaurant_items WHERE id = ?';
 	
@@ -59,13 +54,8 @@ let deleteItem = (recordToDelete, res) =>{
 }*/
 
 //Update a restaurant item
-<<<<<<< HEAD
-/*let updateItem = (name, neighbhorhood, id, rating, cuisine, res) =>{
-    var updateGroceryListItem = 'UPDATE restaurant_items SET name = ?, neighborhood = ?, rating = ?, cuisine = ? WHERE id = ?'
-=======
 /*let updateItem = (aRestaurant, res) =>{
     var updateRestaurantItem = 'UPDATE restaurant_items SET rating = 5 WHERE name = ?';
->>>>>>> api
     var params = [name, neighbhorhood, id, rating, cuisine];
 
     db.run(updateGroceryListItem, params, function(err) {
@@ -82,13 +72,8 @@ let deleteItem = (recordToDelete, res) =>{
 }*/
 
 //Display all restaurant items
-<<<<<<< HEAD
-/*let getAllItems = (res) => {
-    var getAllRestaurants = 'SELECT id, name, neighborhood, rating, cuisine FROM restaurant_items';
-=======
 let getAllItems = (res) => {
     var getAllRestaurants = 'SELECT id, name, neighborhood, rating FROM restaurant_items';
->>>>>>> api
     db.all(getAllRestaurants, function(err, rows){
         if (err) {
          
@@ -97,7 +82,7 @@ let getAllItems = (res) => {
           console.log(rows);
           
     })
-}*/
+}
 
 //Display select restaurant items by neighborhood
 /*let getNeighborhoodRestaurants = (neighbhorhood, res) =>{
@@ -121,8 +106,4 @@ let getAllItems = (res) => {
 
 //Display select restaurant items by cuisine
 
-<<<<<<< HEAD
-module.exports = {createItem}
-=======
 module.exports = {createItem, getAllItems}
->>>>>>> api
