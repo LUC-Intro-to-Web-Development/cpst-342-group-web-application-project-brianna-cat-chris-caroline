@@ -327,7 +327,48 @@
                 </form>
             </div>
 
+<<<<<<< HEAD
             <div class="midrightcontainer">
+=======
+        <br>
+
+        <div id = "type">
+            Type:
+            <br>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
+            </form>
+            <br>
+            <form action="/cuisine" method="POST">
+                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
+            </form>
+            <br>
+            <button id = "typebutton" onClick = "window.location.href = '';">Chinese</button>
+            <br>
+            <button id = "typebutton" onClick = "window.location.href = '';">BBQ</button>
+            <br>
+            <button id = "typebutton" onClick = "window.location.href = '';">Fast Food</button>
+        
+        </div>
+
+
+        <table style="margin: 20px;">
+            <tr>
+                <th>Name</th>
+                <th>Neighborhood</th>
+                <th>Cuisine</th>
+                <th>Options</th>
+            </tr>
+        {{#each specificCuisine}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.neighborhood}}</td>
+                <td>{{this.cuisine}}</td>
+                <td>
+                    <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}" onClick="displayRestaurant(event)">Display Page</button>
+                </td>
+>>>>>>> api
                 
                 <div class="italiantype">
                     <img src="/italianfood.PNG" alt="Italian">
@@ -404,6 +445,27 @@
                 </table>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+        <script>
+
+        function displayRestaurant(e){
+            var restaurantID = e.target.value;
+            window.location.href= `/restaurant/${restaurantID}`;
+        }
+            function toLakeview(){
+            window.location.href = "http://localhost:3000/lakeview";
+        }
+
+        function toLincolnPark(){
+            window.location.href = "http://localhost:3000/lincolnpark";
+        }
+
+        function toRogersPark(){
+            window.location.href = "http://localhost:3000/rogerspark";
+        }
+        </script>
+>>>>>>> api
     </body>
     <footer>
     </footer>

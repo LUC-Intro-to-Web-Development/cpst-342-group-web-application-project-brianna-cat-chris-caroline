@@ -26,12 +26,12 @@ app.get('/', function (req, res) {
 
 
 
-app.post('/displaypage', function (req, res) {
+app.get('/restaurant/:id', function (req, res) {
    console.log('Coming from display page');
 
-   var aRestaurant = req.body.cuisine_display;
+   var aRestaurant = req.params.id;
 
-   var specificRestaurant;
+   var specificRestaurant= {};
    //Make request to API
    fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
    .then(response => {
@@ -44,14 +44,32 @@ app.post('/displaypage', function (req, res) {
            specificRestaurant = restaurant;
          }
       });
-      console.log(specificCuisine.length);
+      console.log(specificRestaurant);
       res.render('restaurant', {specificRestaurant});
 
    })
    .catch(error => console.log(error));
 
+<<<<<<< HEAD
    //dbOperations.createItem(aRestaurant, res);
+=======
+>>>>>>> api
 }) //end of cuisine post route
+
+app.post('/addRestaurant', function(req, res) {
+   console.log("Entering info from display page");
+
+   var restaurantName = req.body.cuisine_display;
+   var rating = req.body.rate;
+   var neighborhood = req.body.neighborhood;
+
+   console.log(restaurantName);
+   console.log(rating);
+   console.log(neighborhood);
+
+   dbOperations.createItem(restaurantName, neighborhood, rating, res);
+
+})
 
 /*app.get('/lakeview', function (req, res) {
 	

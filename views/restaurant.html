@@ -9,75 +9,74 @@
 		<meta name = "keywords" content = "brianna wright, caitlin cabanas, caroline houser, chris sinclair, chicago, restaurants, reviews, ratings">
 		<meta name = "author" content = "Brianna Wright, Caitlin Cabanas Caroline Houser, Chris Sinclair">
 		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        
+        <style>
+                *{
+                    margin: 0;
+                    padding: 0;
+                }
+                .rate {
+                    float: left;
+                    height: 46px;
+                    padding: 0 10px;
+                }
+                .rate:not(:checked) > input {
+                    position:absolute;
+                    top:-9999px;
+                }
+                .rate:not(:checked) > label {
+                    float:right;
+                    width:1em;
+                    overflow:hidden;
+                    white-space:nowrap;
+                    cursor:pointer;
+                    font-size:30px;
+                    color:#ccc;
+                }
+                .rate:not(:checked) > label:before {
+                    content: '★ ';
+                }
+                .rate > input:checked ~ label {
+                    color: #ffc700;    
+                }
+                .rate:not(:checked) > label:hover,
+                .rate:not(:checked) > label:hover ~ label {
+                    color: #deb217;  
+                }
+                .rate > input:checked + label:hover,
+                .rate > input:checked + label:hover ~ label,
+                .rate > input:checked ~ label:hover,
+                .rate > input:checked ~ label:hover ~ label,
+                .rate > label:hover ~ input:checked ~ label {
+                    color: #c59b08;
+                }
+
+                /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+        </style>
 	</head>
 
 	<body>
-        <div id = "homeheading">
-            Chicago Eats!
-        </div>
-
-        <br>
-
-		<div id = "location">
-            Location:
-            <br>
-            <button onClick="toLakeview()" class="location" id="Lakeview">Lakeview</button>
-            <br>
-            <button onClick="toLincolnPark()" class="location" id="Lincoln Park">Lincoln Park</button>
-            <br>
-            <button onClick="toRogersPark()" class="location" id="Rogers Park">Rogers Park</button>
-        </div>
-
-        <br>
-
-        <div id = "type">
-            Type:
-            <br>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Italian">Italian</button>
-            </form>
-            <br>
-            <form action="/cuisine" method="POST">
-                <button id = "typebutton" name="cuisine" value="Mexican">Mexican</button>
-            </form>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Chinese</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">BBQ</button>
-            <br>
-            <button id = "typebutton" onClick = "window.location.href = '';">Fast Food</button>
-        
-        </div>
-
-
-        <table style="margin: 20px;">
-            <tr>
-                <th>Name</th>
-                <th>Neighborhood</th>
-                <th>Cuisine</th>
-                <th>Options</th>
-            </tr>
-      
-            <tr>
-                <td>{{this.name}}</td>
-                <td>{{this.neighborhood}}</td>
-                <td>{{this.cuisine}}</td>
-                <td>
-                    <form action="/displaypage" method="POST">
-                        <input type="radio" name="rating" value="0">
-                        <input type="radio" name="rating" value="1">
-                        <button type="button" class="btn btn-success" name="cuisine_display" value="{{this.id}}">Display Page</button>
-                    </form>
-                    <form action="/delete_item" method="POST">
-                        
-                        <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.id}}">DELETE</button>
-                    </form>
-                </td>
-                
-            </tr>
-      
-    </table>
+        <h1>{{specificRestaurant.name}}</h1>
+        <h2>{{specificRestaurant.neighborhood}}</h2>
+        <h2>Rate this Restaurant:</h2>
+        <!--Code source and referencing https://codepen.io/hesguru/pen/BaybqXv-->
+        <form action="/addRestaurant" method="POST">
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+              <input type="hidden" name="neighborhood" value="{{specificRestaurant.neighborhood}}">
+              <br><br><br>
+            <button type="submit" class="btn btn-success" style="background-color: rgb(0, 123, 255); color: white; font-size: 1.4em; padding: .9em;" name="cuisine_display" value="{{specificRestaurant.name}}">Submit Rating</button>
+        </form>
 
     </body>
     

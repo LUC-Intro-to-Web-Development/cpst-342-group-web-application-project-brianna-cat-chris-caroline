@@ -14,9 +14,9 @@ let db = new sqlite3.Database('./chirest.db', sqlite3.OPEN_READWRITE, (err) => {
 });
 
 //Add a restaurant item
-let createItem = (name, neighborhood, rating, cuisine, res) =>{
-    var createRestaurantItem = 'INSERT INTO restaurant_items (name, neighborhood, rating, cuisine) VALUES (?,?,?,?)' //Parameterized Query
-    var params = [name, neighborhood, rating, cuisine];
+let createItem = (restaurantName, neighborhood, rating, res) =>{
+    var createRestaurantItem = 'INSERT INTO restaurant_items (name, neighborhood, rating) VALUES (?,?,?)' //Parameterized Query
+    var params = [restaurantName, neighborhood, rating];
     
     db.run(createRestaurantItem, params, function(err){
 
@@ -26,13 +26,20 @@ let createItem = (name, neighborhood, rating, cuisine, res) =>{
         
         console.log("Restaurant Item Created");
         console.log(`Rows inserted ${this.changes}`);
+
+        res.render('index.html');
     })
     getAllItems(res);
 
 }
 
+<<<<<<< HEAD
 /*Delete a restaurant item
 let deleteItem = (recordToDelete, res) =>{
+=======
+//Delete a restaurant item
+/*let deleteItem = (recordToDelete, res) =>{
+>>>>>>> api
     
     var deleteRestaurantItem = 'DELETE FROM restaurant_items WHERE id = ?';
 	
@@ -52,8 +59,13 @@ let deleteItem = (recordToDelete, res) =>{
 }*/
 
 //Update a restaurant item
+<<<<<<< HEAD
 /*let updateItem = (name, neighbhorhood, id, rating, cuisine, res) =>{
     var updateGroceryListItem = 'UPDATE restaurant_items SET name = ?, neighborhood = ?, rating = ?, cuisine = ? WHERE id = ?'
+=======
+/*let updateItem = (aRestaurant, res) =>{
+    var updateRestaurantItem = 'UPDATE restaurant_items SET rating = 5 WHERE name = ?';
+>>>>>>> api
     var params = [name, neighbhorhood, id, rating, cuisine];
 
     db.run(updateGroceryListItem, params, function(err) {
@@ -70,15 +82,20 @@ let deleteItem = (recordToDelete, res) =>{
 }*/
 
 //Display all restaurant items
+<<<<<<< HEAD
 /*let getAllItems = (res) => {
     var getAllRestaurants = 'SELECT id, name, neighborhood, rating, cuisine FROM restaurant_items';
+=======
+let getAllItems = (res) => {
+    var getAllRestaurants = 'SELECT id, name, neighborhood, rating FROM restaurant_items';
+>>>>>>> api
     db.all(getAllRestaurants, function(err, rows){
         if (err) {
          
             throw err;
           }
           console.log(rows);
-
+          
     })
 }*/
 
@@ -104,4 +121,8 @@ let deleteItem = (recordToDelete, res) =>{
 
 //Display select restaurant items by cuisine
 
+<<<<<<< HEAD
 module.exports = {createItem}
+=======
+module.exports = {createItem, getAllItems}
+>>>>>>> api
