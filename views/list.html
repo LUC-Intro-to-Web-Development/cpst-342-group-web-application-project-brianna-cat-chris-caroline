@@ -1,36 +1,55 @@
-<!DOCTYPE html>
-<html lang = "en">
-	<head>
-		<title>Chicago Eats</title>
-		<link rel = "stylesheet" href = "./css/style.css" type = "text/css">
-		<meta charset = "UTF-8">
-		<meta name = "description" content = "Chicago Eats">
-		<meta name = "keywords" content = "brianna wright, caitlin cabanas, caroline houser, chris sinclair, chicago, restaurants, reviews, ratings">
-		<meta name = "author" content = "Brianna Wright, Caitlin Cabanas Caroline Houser, Chris Sinclair">
-		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-	</head>
+<style>
+.expand{
+    display: none;
+}
 
-	<body>
-        <div id = "homeheading">
-            Chicago Eats!
-        </div>
-        
-        <br>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-		<div id = "location">
-            Restaurant List:
-            <br>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Loop</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Lakeview</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Lincoln Park</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Logan Square</button>
-            <br>
-            <button id = "locationbutton" onClick = "window.location.href = '';">Rogers Park</button>
-        </div>
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 
-    </body>
-</html>
+ th{
+  padding: 8px;
+  text-align: left;
+  font-weight: 550;
+  border-style: solid;
+  border-width: 2px;    
+  }
+
+tr:hover {
+  background-color: #c0c0c1d5;
+}
+</style>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Neighborhood</th>
+        <th>Cuisine</th>
+        <th>Rating</th>
+    </tr>
+{{#each specificCuisine}}
+<tr onclick="expandRest('{{this.name}}', '{{this.neighborhood}}', '{{this.id}}')">
+    <td>{{this.name}}</td>
+    <td>{{this.neighborhood}}</td>
+    <td>{{this.cuisine}}</td>
+    <td>{{this.rating}}</td>
+</tr>
+<tr class="expand" id="rest{{this.id}}"></tr>
+{{/each}}
+{{#each specificNeighborhood}}
+<tr onclick="expandRest('{{this.name}}', '{{this.neighborhood}}', '{{this.id}}')">
+        <td>{{this.name}}</td>
+        <td>{{this.neighborhood}}</td>
+        <td>{{this.cuisine}}</td>
+        <td>{{this.rating}}</td>
+    </tr>
+    <tr class="expand" id="rest{{this.id}}"></tr>
+{{/each}}
+</table>
