@@ -93,11 +93,12 @@ function makeRating(name, location, element){
             score = stars[i].value;
         }
     }
+    return score;
     if (score==0){
         return; //just to keep the pretty css stars
     }
     // Send a POST request to the server with Form data
-    fetch('/rate', {
+    /*fetch('/rate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -114,4 +115,5 @@ function makeRating(name, location, element){
                 allRows[i].classList.remove('show');
             }
         }
+        */
 }

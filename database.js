@@ -106,8 +106,8 @@ let updateRating = async (name, neighborhood, guestRating, res) =>{
         var oldRating = item.rating;
         // https://math.stackexchange.com/questions/22348/how-to-add-and-subtract-values-from-an-average
         var newTotal = item.total +1;
-        var newRating = oldRating + ((guestRating-oldRating)/(newTotal));
-        var update = 'UPDATE rating_items SET rating = ?, total = ? WHERE name = ? AND neighborhood = ?';
+       // var newRating = oldRating + ((guestRating-oldRating)/(newTotal));
+        var update = 'UPDATE rating_items SET rating = ? WHERE name = ?';
         var params = [newRating, newTotal, name, neighborhood];
         db.run(update, params, function(err) {
             if (err){

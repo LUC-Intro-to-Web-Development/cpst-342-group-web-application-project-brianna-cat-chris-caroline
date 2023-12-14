@@ -94,6 +94,12 @@
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #85B5D4;}
 
+ /*.background-image{
+	opacity:.5;
+	position: absolute;
+	z-index: -9999;
+  }
+  */
 
 .rate {
 	float: left;
