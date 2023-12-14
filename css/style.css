@@ -1,15 +1,17 @@
 .header {
 	padding: 60px;
 	text-align: center;
-	background: #b1ddf3;
-	color: #000;
+	color: 	#FFF;
 	font-size: 30px;
+	background-image:url("https://tobyharriman.com/wp-content/uploads/2015/11/Chicago-Skyline-Aerial-Panorama.jpg");
+  background-position: center;
   }
+
   .header-border{
-  border-width:3px;
-  border-style:solid;
-  border-color: black;
-  }
+	border-width:3px;
+	border-style:dotted;
+	border-color: white;
+	}
   
   .header-text {
   text-align: center;
@@ -21,12 +23,13 @@
   }
   
   .dropbtn {
-	background-color: #ff0000;
-	color: white;
+	background-color: #b1ddf3;
+	color: black;
 	padding: 16px;
 	font-size: 16px;
 	border: none;
 	width: 100%;
+	font-weight: 550;
   }
   
   .dropdown {
@@ -35,6 +38,7 @@
 	width: 50%;
 	float: left;
 	cursor: pointer;
+	font-weight: 550;
   }
   
   .dropdown-btn{
@@ -54,13 +58,14 @@
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	border: 2px solid #ffbb45;
+	border: 1.5px solid #ffbb45;
 	width: 100%;
   }
   
   .button:hover {
 	background-color: #ffbb45;
-	color: white;
+  color: white;
+  font-weight: 500;
   }
   
   /* Dropdown Content (Hidden by Default) */
@@ -87,7 +92,7 @@
   }
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: 	#D10303;}
+  .dropdown:hover .dropbtn {background-color: #85B5D4;}
 
 
 .rate {
