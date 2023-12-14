@@ -46,42 +46,14 @@ app.get('/restaurant/:id', function (req, res) {
          }
       });
       console.log(specificRestaurant);
-      res.render('index', {specificRestaurant});
+      res.render('restaurant', {specificRestaurant});
 
    })
    .catch(error => console.log(error));
 
 }) 
 
-app.get('/display', function (req, res) {
-
-   var aRestaurant = req.params.cuisine_display.value;
-   console.log(aRestaurant);
-
-   /*
-   var specificRestaurant = {};
-   //Make request to API
-   fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
-   .then(response => {
-      return response.json();
-   } ) 
-
-   .then(data =>{
-      data.forEach(restaurant => {
-         
-         if (restaurant.id == aRestaurant){
-           specificRestaurant = restaurant;
-         }
-      });
-      console.log(specificRestaurant);
-      res.render('index', {specificRestaurant});
-
-   })
-   .catch(error => console.log(error)); */
-
-})
-
-app.post('/rating', function (req, res) {
+app.post('/update', function (req, res) {
 
    var restaurantName = req.body.cuisine_display;
    // var specificNeighborhood = [];
@@ -133,8 +105,7 @@ app.get('/rogerspark', function (req, res) {
 app.post('/cuisine', function (req, res) {
 
    var cuisineGenre = req.body.cuisine;
-   // var specificCuisine = [];
-   var rest = [];
+   var specificCuisine = [];
    //Make request to API
    fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
    .then(response => {
@@ -144,11 +115,11 @@ app.post('/cuisine', function (req, res) {
       data.forEach(restaurant => {
          
          if (restaurant.cuisine == cuisineGenre){
-            rest.push(restaurant);
+            specificCuisine.push(restaurant);
          }
       });
-      console.log(rest.length);
-      res.render('index', {rest});
+      console.log(specificCuisine.length);
+      res.render('index', {specificCuisine});
 
    })
    .catch(error => console.log(error));
@@ -157,8 +128,8 @@ app.post('/cuisine', function (req, res) {
 app.post('/neighborhood', function (req, res) {
 
    var neighborhoodType = req.body.neighborhood;
-   // var specificNeighborhood = [];
-   var rest = [];
+   var specificNeighborhood = [];
+
    //Make request to API
    fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
    .then(response => {
@@ -168,11 +139,11 @@ app.post('/neighborhood', function (req, res) {
       data.forEach(restaurant => {
          
          if (restaurant.neighborhood == neighborhoodType){
-            rest.push(restaurant);
+            specificNeighborhood.push(restaurant);
          }
       });
-      console.log(rest.length);
-      res.render('index', {rest});
+      console.log(specificNeighborhood.length);
+      res.render('index', {specificNeighborhood});
 
    })
    .catch(error => console.log(error));
