@@ -54,11 +54,11 @@ let createItem = (restaurantName, neighborhood, rating, res) =>{
 }*/
 
 //Update a restaurant item
-/*let updateItem = (aRestaurant, res) =>{
+let updateItem = (aRestaurant, res) =>{
     var updateRestaurantItem = 'UPDATE restaurant_items SET rating = 5 WHERE name = ?';
     var params = [name, neighbhorhood, id, rating, cuisine];
 
-    db.run(updateGroceryListItem, params, function(err) {
+    db.run(updateRestaurantItem, params, function(err) {
         if (err){
 			return console.log(err.message);
 		}
@@ -69,7 +69,7 @@ let createItem = (restaurantName, neighborhood, rating, res) =>{
     })
 
     getAllItems(res);
-}*/
+}
 
 //Display all restaurant items
 let getAllItems = (res) => {
@@ -106,4 +106,4 @@ let getAllItems = (res) => {
 
 //Display select restaurant items by cuisine
 
-module.exports = {createItem, getAllItems}
+module.exports = {createItem, getAllItems, updateItem}

@@ -46,12 +46,54 @@ app.get('/restaurant/:id', function (req, res) {
          }
       });
       console.log(specificRestaurant);
-      res.render('restaurant', {specificRestaurant});
+      res.render('index', {specificRestaurant});
 
    })
    .catch(error => console.log(error));
 
 }) 
+
+app.get('/display', function (req, res) {
+
+   var aRestaurant = req.params.cuisine_display.value;
+   console.log(aRestaurant);
+
+   /*
+   var specificRestaurant = {};
+   //Make request to API
+   fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(response => {
+      return response.json();
+   } ) 
+
+   .then(data =>{
+      data.forEach(restaurant => {
+         
+         if (restaurant.id == aRestaurant){
+           specificRestaurant = restaurant;
+         }
+      });
+      console.log(specificRestaurant);
+      res.render('index', {specificRestaurant});
+
+   })
+   .catch(error => console.log(error)); */
+
+})
+
+app.post('/rating', function (req, res) {
+
+   var restaurantName = req.body.cuisine_display;
+   // var specificNeighborhood = [];
+   var rest = [];
+   //Make request to API
+   fetch('https://6566a88864fcff8d730ef1a5.mockapi.io/api/chirest/restaurants')
+   .then(response => {
+      return response.json();
+   } ) 
+
+   dbOperations.updateItem(restaurantName);
+})
 
 //end of cuisine post route
 
@@ -134,7 +176,12 @@ app.post('/neighborhood', function (req, res) {
 
    })
    .catch(error => console.log(error));
-}) //end of neighborhood post route
+})
+
+
+
+
+//end of neighborhood post route
 
 
 //app.post('/get_lakeview', function (req, res) {
