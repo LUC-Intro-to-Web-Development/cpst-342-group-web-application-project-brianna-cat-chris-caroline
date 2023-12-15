@@ -1,7 +1,7 @@
 const express = require('express')
 const dbOperations = require('./database.js')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 // view engine setup -> We'll use handlebars.js as our templating engine
 app.set('view engine', 'html');
